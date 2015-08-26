@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Python lists and tuples both store items. They are capable of storing any objects. Historically, tuples are used for heterogenous items and lists are used for homogenous items. Tuples are immutable whereas lists are mutable BUT the members of a tuple can be modified. Only tuples will work for dictionary keys.
 
 ---
 
@@ -20,7 +20,7 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Sets can only contain unique items. They also cannot contain unhashable objects. Checking for memberships in a set is extremey fast because all objects are hashable. A list takes O(n) time in the worst case. 
 
 ---
 
@@ -28,7 +28,18 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Lambda functions are anonymous functions. They allow us to manipulate data structures very quickly. These lambda functions first normalize and then sort the values by how extreme they are. 
+
+```python
+
+import numpy as np
+arr = list(np.random.normal(5,10,24)) # mean 5 sd 10, 24 samples
+
+normalized = lambda x: (x - np.mean(x)) / np.std(x)
+normal_array = normalized(arr)
+normal_array.sort(key=lambda x: x**(2))
+normal_array
+```
 
 ---
 
