@@ -1,3 +1,7 @@
 *.pyc
 .*
 sn.*
+ThinkStats2
+thinkplot.py
+thinkstats2.py
+sn.ipynb
