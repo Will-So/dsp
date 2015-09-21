@@ -47,38 +47,19 @@ normal_array
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions create a list and are often used as an alternative to for loops or the map function. After creating the list comprehension, we can use filter to refine the list. In the example below, I only keep the items that have a vlue greater than 10
 
+
+```python
+l = [i**2 for i in range(20)]
+list(map(lambda x: x ** 2, range(20)))
+list(filter(lambda x: x > 10, l))
+``` 
 ---
 
 ###Complete the following problems by editing the files below:
 
 ###Q5. Datetime
-Use Python to compute days between start and stop date.   
-a.  
-
-```
-date_start = '01-02-2013'    
-date_stop = '07-28-2015'
-```
-
->> REPLACE THIS TEXT WITH YOUR RESPONSE
-
-b.  
-```
-date_start = '12312013'  
-date_stop = '05282015'  
-```
-
->> REPLACE THIS TEXT WITH YOUR RESPONSE
-
-c.  
-```
-date_start = '15-Jan-1994'      
-date_stop = '14-Jul-2015'  
-```
-
->> REPLACE THIS TEXT WITH YOUR RESPONSE  
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 

@@ -16,22 +16,59 @@ Use regular expressions to:
 
 ####Q1. Find how many different degrees there are, and their frequencies: Ex:  PhD, ScD, MD, MPH, BSEd, MS, JD, etc.
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> ' Sc.D.', 'Ph.D.', ' PhD', ' Ph.D.', ' Ph.D', ' MD MPH Ph.D',
+       ' B.S.Ed. M.S. Ph.D.', ' JD MA MPH MS PhD', ' PhD ScD', '0', ' ScD'
+>So we have 11 different permutations but we have BSEd, Sc.D Ph.D, MD, MPH, 0 (probably nothing or unknown), and B.S.ED  
+
+> ```
+ Ph.D.                 15
+ PhD                    7
+ Sc.D.                  4
+ Ph.D                   4
+ ScD                    1
+ B.S.Ed. M.S. Ph.D.     1
+Ph.D.                   1
+ JD MA MPH MS PhD       1
+ MD MPH Ph.D            1
+ PhD ScD                1
+0                       1```
+
 
 
 ####Q2. Find how many different titles there are, and their frequencies:  Ex:  Assistant Professor, Professor
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> ```Professor of Biostatistics              13
+Associate Professor of Biostatistics    12
+Assistant Professor of Biostatistics    11
+Assistant Professor is Biostatistics     1```
+The is instead of of is obviously a typo. 
 
 
 ####Q3. Search for email addresses and put them in a list.  Print the list of email addresses.
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> ['bellamys@mail.med.upenn.edu',
+ 'bryanma@upenn.edu',
+ 'sellenbe@upenn.edu',
+ 'ruifeng@upenn.edu',
+ 'pgimotty@upenn.edu',
+ 'hsu9@mail.med.upenn.edu',
+ 'whwang@mail.med.upenn.edu',
+ 'jrlandis@mail.med.upenn.edu',
+ 'mingyao@mail.med.upenn.edu',
+ 'rlocalio@upenn.edu',
+ 'knashawn@mail.med.upenn.edu',
+ 'mputt@mail.med.upenn.edu',
+ 'michross@upenn.edu',
+ 'msammel@cceb.med.upenn.edu',
+ 'hshou@mail.med.upenn.edu',
+ 'alisaste@mail.med.upenn.edu',
+ 'rxiao@mail.med.upenn.edu',
+ 'dxie@upenn.edu']
 
 
 ####Q4. Find how many different email domains there are (Ex:  mail.med.upenn.edu, upenn.edu, email.chop.edu, etc.).  Print the list of unique email domains.
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> {'cceb.med.upenn.edu', 'mail.med.upenn.edu', 'upenn.edu'}
 
 Place your code in this file: [advanced_python_regex.py](python/advanced_python_regex.py)
 
@@ -69,7 +106,11 @@ faculty_dict = { 'Ellenberg': [\
 ```
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> Pandas is better suited for this problem than pure python
+
+>> 'Bellamy': ['Sc.D.', 'Associate Professor ', 'bellamys@mail.med.upenn.edu'],
+ 'Bilker': ['Ph.D.', 'Professor ', 'warren@upenn.edu'],
+ 'Bryan': ['PhD', 'Assistant Professor ', 'bryanma@upenn.edu']
 
 ####Q7.  The previous dictionary does not have the best design for keys.  Create a new dictionary with keys as:
 
@@ -84,11 +125,15 @@ professor_dict = {('Susan', 'Ellenberg'): ['Ph.D.', 'Professor', 'sellenbe@upenn
 
 Print the first 3 key and value pairs of the dictionary:
 
->> REPLACE THIS WITH YOUR RESPONSE
+>>('Bellamy', 'Scarlett'): ['Sc.D.',
+  'Associate Professor ',
+  'bellamys@mail.med.upenn.edu'],
+ ('Bilker', 'Warren'): ['Ph.D.', 'Professor ', 'warren@upenn.edu'],
+ ('Bryan', 'Matthew'): ['PhD', 'Assistant Professor ', 'bryanma@upenn.edu'],
 
 ####Q8.  It looks like the current dictionary is sorted by first name.  Sort by last name and print the first 3 key and value pairs.  
 
->> REPLACE THIS WITH YOUR RESPONSE
+>> I just made the order in `last_name`, `first_name` order to begin with to avoid this problem. 
 
 Place your code in this file: [advanced_python_dict.py](python/advanced_python_dict.py)
 

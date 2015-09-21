@@ -15,7 +15,12 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    count = 0
+    for word in words:
+        if len(word) < 2: #Skip single length and 0 length strings
+            continue
+        count += 1 if word[0] == word[-1] else 0
+    return count
 
 
 def front_x(words):
@@ -32,7 +37,11 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    words = sorted(words)
+    for value, word in enumerate(words):
+        if word[0] == 'x':
+            words.insert(0, words.pop(value))
+    return words
 
 
 def sort_last(tuples):
@@ -52,24 +61,21 @@ def sort_last(tuples):
     raise NotImplementedError
 
 
-def remove_adjacent(nums):
+def sort_last(tuples):
     """
-    Given a list of numbers, return a list where all adjacent equal
-    elements have been reduced to a single element, so [1, 2, 2, 3]
-    returns [1, 2, 3]. You may create a new list or modify the passed
-    in list.
+    Given a list of non-empty tuples, return a list sorted in
+    increasing order by the last element in each tuple.
+    e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
+         [(2, 2), (1, 3), (3, 4, 5), (1, 7)].
 
-    >>> remove_adjacent([1, 2, 2, 3])
-    [1, 2, 3]
-    >>> remove_adjacent([2, 2, 3, 3, 3])
-    [2, 3]
-    >>> remove_adjacent([3, 2, 3, 3, 3])
-    [3, 2, 3]
-    >>> remove_adjacent([])
-    []
+    >>> sort_last([(1, 3), (3, 2), (2, 1)])
+    [(2, 1), (3, 2), (1, 3)]
+    >>> sort_last([(2, 3), (1, 2), (3, 1)])
+    [(3, 1), (1, 2), (2, 3)]
+    >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
+    [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
-
+    return sorted(tuples, key=lambda x: x[1])
 
 def linear_merge(list1, list2):
     """
@@ -85,4 +91,5 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    [list1.append(i) for i in list2]
+    return list1

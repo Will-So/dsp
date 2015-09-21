@@ -18,7 +18,8 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    count = count if count < 10 else 'many'
+    return 'Number of donuts: ' + str(count)
 
 
 def both_ends(s):
@@ -37,8 +38,10 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
-
+    if len(s) < 2:
+        return ''
+    else:
+        return s[:2] + s[-2:]
 
 def fix_start(s):
     """
@@ -56,7 +59,11 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    new_string = s[0]
+    for i in s[1:]:
+        new_string += i if i != s[0] else '*'
+            
+    return new_string
 
 
 def mix_up(a, b):
@@ -74,7 +81,7 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    return b[:2] + a[2:] + ' ' + a[:2] + b[2:]
 
 
 def verbing(s):
@@ -91,7 +98,11 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if s[-3:] == 'ing':
+        return s + 'ly'
+        
+    else:
+        return s if len(s) < 3 else s + 'ing'
 
 
 def not_bad(s):
@@ -111,9 +122,17 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    new_string = None
+    if s.find('not') < s.find('bad'):
+        new_string = s[:s.find('not')]
+        new_string += 'good'
+        new_string += s[s.find('bad') + 3:]
+        
+        print(s.find('not'), s.find('bad'))
+    return new_string or s
+        
 
-
+import math
 def front_back(a, b):
     """
     Consider dividing a string into two halves. If the length is even,
@@ -130,4 +149,8 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    a_trunc, b_trunc = math.trunc(len(a) / 2), math.trunc(len(b) / 2)
+    a_front, b_front = a[:a_trunc], b[:b_trunc]
+    a_back, b_back = a[a_trunc:], b[b_trunc:]
+    
+    return a_front + b_front + a_back + b_back
